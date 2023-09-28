@@ -34,7 +34,7 @@ def create_plot(county):
     ax.axhline(selected_county_avg, color='gray', linestyle='dashed', alpha=0.7)
     ax.set_ylabel('Data Value (Age Adjusted prevalence) - Percent')
     ax.set_ylim(0, 30)
-    ax.set_title('Diagnosed Vision Disability Age Adjusted Prevalence Comparison')
+    ax.set_title('Diabetes Age Adjusted Prevalence Comparison')
     
     # Convert plot to PNG image
     img = io.BytesIO()
