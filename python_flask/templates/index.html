@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Vision Disability App</title>
+</head>
+<body>
+
+<h2>Vision Disability Age-adjusted Prevalence in California by County</h2>
+
+<form method="post">
+    <select name="county" onchange="this.form.submit()">
+        {% for county in counties %}
+        <option value="{{ county }}" {% if county == selected_county %} selected {% endif %}>{{ county }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+<img src="data:image/png;base64,{{ img }}" alt="Vision Disability Prevalance Visualization" />
+
+</body>
+</html>
