@@ -14,11 +14,11 @@ app = Flask(__name__)
 # Load the dataset
 url = "https://raw.githubusercontent.com/zf81/datasci_4_web_viz/main/dataset/PLACES__Local_Data_for_Better_Health__County_Data_2023_release.csv"
 df = pd.read_csv(url)
-df_vision = df[(df['MeasureId'] == 'VISION') & (df['Data_Value_Type'] == 'Age-adjusted prevalence')]
+df_diabetes = df[(df['MeasureId'] == 'DIABETES') & (df['Data_Value_Type'] == 'Age-adjusted prevalence')]
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    counties = sorted(df_vision['LocationName'].unique())
+    counties = sorted(df_diabetes['LocationName'].unique())
     selected_county = request.form.get('county') or counties[0]
     
     img = create_plot(selected_county)
@@ -26,8 +26,8 @@ def index():
     return render_template("index.html", counties=counties, selected_county=selected_county, img=img)
 
 def create_plot(county):
-    overall_avg = df_vision['Data_Value'].mean()
-    selected_county_avg = df_vision[df_vision['LocationName'] == county]['Data_Value'].mean()
+    overall_avg = df_diabetes['Data_Value'].mean()
+    selected_county_avg = df_diabetes[df_diabetes['LocationName'] == county]['Data_Value'].mean()
 
     fig, ax = plt.subplots(figsize=(10, 6))
     ax.bar(['Selected County', 'Overall Average'], [selected_county_avg, overall_avg], color=['orchid', 'darksalmon'])
