@@ -51,7 +51,7 @@ server <- function(input, output, session) {
            x = 'Location (County)') +
       theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
       ylim(0, 30) +
-      scale_fill_manual(values = c("paleturquoise", "lightskyblue"))
+      scale_fill_manual(values = c("lightcoral", "lightskyblue"))
   })
   
 }
