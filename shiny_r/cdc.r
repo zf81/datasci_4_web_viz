@@ -58,3 +58,5 @@ server <- function(input, output, session) {
 
 # Run the Shiny app
 shinyApp(ui = ui, server = server)
+
+# Link to Shiny App: https://zf21.shinyapps.io/shinyApp/
