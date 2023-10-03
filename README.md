@@ -6,6 +6,7 @@ The objective of this assignment was to "Explore web-based platforms for interac
 
 ## 1. R's Shiny Visualization
 Shiny App Link- https://zf21.shinyapps.io/shinyApp/
+
 I did not face any major issues while deploying the app on Shiny App io. I used the tutorial on the Posit.co website to first deploy a sample application and then put in the code for the web application to display data showing age-adjusted diabetes prevalence in various counties in California.
 
 ## 2. Python's Shiny Visualization:
